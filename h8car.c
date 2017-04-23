@@ -1,10 +1,10 @@
 #include "3664.h"
 
-#define LED17 0x01   //P80    LED1›        ›LED5
+#define LED17 0x01   //P80    LED1â—‹        â—‹LED5
 #define LED26 0x02   //P81            LED4
-#define LED35 0x04   //P82    LED2›   ›   ›LED6
+#define LED35 0x04   //P82    LED2â—‹   â—‹   â—‹LED6
 #define LED4  0x08   //P83
-                     //       LED3›        ›LED7
+                     //       LED3â—‹        â—‹LED7
 
 
 #define SEGa  0x01 //P50  7seg P1            ____
@@ -17,76 +17,76 @@
 
 #define 
 
-#define P1IN 0x2     //“ü—Íƒ|[ƒgP11
+#define P1IN 0x2     //å…¥åŠ›ãƒãƒ¼ãƒˆP11
 
-void saicolo( int i ){    //LED‚ğŒõ‚ç‚¹‚éŠÖ”saicolo
+void saicolo( int i ){    //LEDã‚’å…‰ã‚‰ã›ã‚‹é–¢æ•°saicolo
 	
 	switch( i ){
 		
-		case 1: PDR8 = LED17 | LED26 | LED35 ;	//1‚ÌAŒõ‚ç‚¹‚È‚¢LED
+		case 1: PDR8 = LED17 | LED26 | LED35 ;	//1ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
 		        break;
 	
-	    case 2: PDR8 = LED26 | LED35 | LED4 ;	//2‚ÌAŒõ‚ç‚¹‚È‚¢LED
-	   		    break;
+	    	case 2: PDR8 = LED26 | LED35 | LED4 ;	//2ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
+	   		break;
 
-        case 3: PDR8 = LED26 | LED35 ;			//3‚ÌAŒõ‚ç‚¹‚È‚¢LED
-                break;
+        	case 3: PDR8 = LED26 | LED35 ;		//3ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
+                	break;
         
-        case 4: PDR8 = LED4 | LED26 ;			//4‚ÌAŒõ‚ç‚¹‚È‚¢LED
+        	case 4: PDR8 = LED4 | LED26 ;		//4ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
    		        break;
         
-        case 5: PDR8 = LED26 ;					//5‚ÌAŒõ‚ç‚¹‚È‚¢LED
-      	        break;
+        	case 5: PDR8 = LED26 ;			//5ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
+      	        	break;
         
-        case 0: PDR8 = LED4 ;					//6‚ÌAŒõ‚ç‚¹‚È‚¢LED
-                break;
+        	case 0: PDR8 = LED4 ;			//6ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
+                	break;
 	}
 	
 }
 
-void moji( int i ){    //7segmentŠÖ”
+void moji( int i ){    //7segmenté–¢æ•°
 	
 	switch(i){
 		
-		case 1: PDR5 = SEGa | SEGd | SEGe | SEGf | SEGg ; //1‚ÌAŒõ‚ç‚¹‚È‚¢LED
+		case 1: PDR5 = SEGa | SEGd | SEGe | SEGf | SEGg ; //1ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
 		        break;
 	
-	    case 2: PDR5 = SEGc | SEGf;                       //2‚ÌAŒõ‚ç‚¹‚È‚¢LED
-	            break;
+	    	case 2: PDR5 = SEGc | SEGf;                       //2ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
+	            	break;
 	    
-	    case 3: PDR5 = SEGe | SEGf;                       //3‚ÌAŒõ‚ç‚¹‚È‚¢LED
-	            break;
+	    	case 3: PDR5 = SEGe | SEGf;                       //3ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
+	            	break;
 	    
-	    case 4: PDR5 = SEGa | SEGd | SEGe ;               //4‚ÌAŒõ‚ç‚¹‚È‚¢LED
-	            break;
+	    	case 4: PDR5 = SEGa | SEGd | SEGe ;               //4ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
+	            	break;
 	    
-	    case 5: PDR5 = SEGb | SEGe ;                      //5‚ÌAŒõ‚ç‚¹‚È‚¢LED
-	            break;
+	    	case 5: PDR5 = SEGb | SEGe ;                      //5ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
+	            	break;
 	    
-	    case 0: PDR5 = SEGb ;                             //6‚ÌAŒõ‚ç‚¹‚È‚¢LED
-	            break;
+	    	case 0: PDR5 = SEGb ;                             //6ã®æ™‚ã€å…‰ã‚‰ã›ãªã„LED
+	            	break;
 	            
 	}
 	
 }
 int main(){
 	
-	int i = 0 ;  //ƒTƒCƒRƒ‚Ì–Ú 1`6
-	int k ;      //’x‰„ŠÔ‚ğ”‚¦‚é•Ï”
+	int i = 0 ;  //ã‚µã‚¤ã‚³ãƒ­ã®ç›® 1ï½6
+	int k ;      //é…å»¶æ™‚é–“ã‚’æ•°ãˆã‚‹å¤‰æ•°
 	
-	PMR1 = 0x00 ;	// ”Ä—p“üo—Íƒ|[ƒg‚Éİ’è
-	PCR1 = 0x00 ;	// ƒ|[ƒg1‚ğ‘Sƒrƒbƒg“ü—Í—p‚Ég—p
+	PMR1 = 0x00 ;	// æ±ç”¨å…¥å‡ºåŠ›ãƒãƒ¼ãƒˆã«è¨­å®š
+	PCR1 = 0x00 ;	// ãƒãƒ¼ãƒˆ1ã‚’å…¨ãƒ“ãƒƒãƒˆå…¥åŠ›ç”¨ã«ä½¿ç”¨
 
-	PMR5 = 0x00 ;  	//”Ä—p“üo—Íƒ|[ƒg‚Éİ’è
-	PCR5 = 0xff ;  	//ƒ|[ƒg5‚ğ‘Sƒrƒbƒgo—Í—p‚Éİ’è
-	PDR5 = 0xff ;  	//ƒ|[ƒg5‚ğƒNƒŠƒA
+	PMR5 = 0x00 ;  	//æ±ç”¨å…¥å‡ºåŠ›ãƒãƒ¼ãƒˆã«è¨­å®š
+	PCR5 = 0xff ;  	//ãƒãƒ¼ãƒˆ5ã‚’å…¨ãƒ“ãƒƒãƒˆå‡ºåŠ›ç”¨ã«è¨­å®š
+	PDR5 = 0xff ;  	//ãƒãƒ¼ãƒˆ5ã‚’ã‚¯ãƒªã‚¢
 	
-	PCR8 = 0xff ;  	//ƒ|[ƒg8‚ğ‘Sƒrƒbƒgo—Í—p‚Éİ’è
-	PDR8 = 0xff ;  	//ƒ|[ƒg8‚ğƒNƒŠƒA
+	PCR8 = 0xff ;  	//ãƒãƒ¼ãƒˆ8ã‚’å…¨ãƒ“ãƒƒãƒˆå‡ºåŠ›ç”¨ã«è¨­å®š
+	PDR8 = 0xff ;  	//ãƒãƒ¼ãƒˆ8ã‚’ã‚¯ãƒªã‚¢
 	
 	while( 1 ) { 
 		
-		if( (PDR1 & P1IN) == 0 ){       //ƒXƒCƒbƒ`‚ğ‰Ÿ‚µ‚Ä‚¢‚é
+		if( (PDR1 & P1IN) == 0 ){       //ã‚¹ã‚¤ãƒƒãƒã‚’æŠ¼ã—ã¦ã„ã‚‹æ™‚
 			
 			++i;
 			i=i%6;
@@ -94,7 +94,7 @@ int main(){
 			saicolo( i ) ;
 			moji( i ) ;
 			
-			for( k = 0 ; k <= 100000 ; ++k ){   //’x‰„
+			for( k = 0 ; k <= 100000 ; ++k ){   //é…å»¶
 				NOP();
 			}
 					
